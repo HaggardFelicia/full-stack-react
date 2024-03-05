@@ -1,14 +1,17 @@
 import  'react';
 import './index.css';
 import SearchBar from './components/SearchBar';
-import API from './API'
+import API from './API';
 
 function App(){
   const handleSearch = async event => {
     event.preventDefault();
-    console.log("searching...", event.target.search.value);
+
+    console.log("searching for", event.target.search.value);
+
     const response = await API.fetchDirectors();
-    console.log('response', response);
+
+    console.log('From our API', response.data );
   }
 
 

@@ -1,4 +1,13 @@
 const mongoose = require('mongoose');
+const user = require('../models/Users');
+
+const saveUser = async (newUser) => {
+    return await newUser.save();
+};
+
+const findUser = async (object) => {
+    return await user.find(object).exec();
+};
 
 const connectDB = async () => {
     try {
@@ -11,4 +20,6 @@ const connectDB = async () => {
     }
 };
 
-module.exports = connectDB;
+
+
+module.exports = {connectDB, saveUser, findUser};
