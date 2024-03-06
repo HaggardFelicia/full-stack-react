@@ -1,6 +1,7 @@
 import  'react';
 import './index.css';
 import SearchBar from './components/SearchBar.jsx';
+// eslint-disable-next-line no-unused-vars
 import API from './API';
 import "./App.css";
 

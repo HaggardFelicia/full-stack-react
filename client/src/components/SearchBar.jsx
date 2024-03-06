@@ -1,5 +1,6 @@
 import {useState} from 'react';
 
+// eslint-disable-next-line react/prop-types
 function SearchBar({ onSubmit }) {
     const [term, setTerm]= useState('');
 
@@ -9,9 +10,9 @@ function SearchBar({ onSubmit }) {
     }
 
     return(
-        <>
+        <div style={styles.searchBar}>
             <h3>Director Search</h3>
-            <form onSubmit={onSubmit}>
+            <form onSubmit={onSubmit} >
                 <label htmlFor='search'>Search:</label>
                 <input
                     type='text'
@@ -23,20 +24,21 @@ function SearchBar({ onSubmit }) {
                 {term.length <3 && <p>Search term must be at least 3 characters</p>}
                 <button type='submit'>Search</button>
             </form>
-        </>
+        </div>
     );
 }
 
 export default SearchBar;
 
-// const styles = {
-//     searchBar: {
-//         backgroundColor: '#28666e',
-//         padding: '1vh'
-//     },
-//     h3: {
-//         color: 'white',
-//         fontSize: '20px',
-//         textAlign: 'center'
-//     }
-// };
+const styles = {
+    searchBar: {
+        backgroundColor: '#28666e',
+        padding: '5% 20vw',
+        margin: '0 auto',
+    },
+    h3: {
+        color: 'white',
+        fontSize: '20px',
+        textAlign: 'center'
+    }
+};
