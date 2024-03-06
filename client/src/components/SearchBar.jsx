@@ -1,6 +1,6 @@
 import {useState} from 'react';
 
-function SearchBar({ onSubmit }){
+function SearchBar({ onSubmit }) {
     const [term, setTerm]= useState('');
 
     const handleChange = event => {
@@ -9,33 +9,34 @@ function SearchBar({ onSubmit }){
     }
 
     return(
-        <div style={styles.searchBar}>
+        <>
             <h3>Director Search</h3>
-            <form onSubmit={onSubmit} style={styles.h3}>
+            <form onSubmit={onSubmit}>
                 <label htmlFor='search'>Search:</label>
                 <input
                     type='text'
                     id='search'
                     name='search'
+                    value={term}
                     onChange={handleChange}
                 />
                 {term.length <3 && <p>Search term must be at least 3 characters</p>}
                 <button type='submit'>Search</button>
             </form>
-        </div>
+        </>
     );
 }
 
 export default SearchBar;
 
-const styles = {
-    searchBar: {
-        backgroundColor: '#28666e',
-        padding: '1vh'
-    },
-    h3: {
-        color: 'white',
-        fontSize: '20px',
-        textAlign: 'center'
-    }
-};
+// const styles = {
+//     searchBar: {
+//         backgroundColor: '#28666e',
+//         padding: '1vh'
+//     },
+//     h3: {
+//         color: 'white',
+//         fontSize: '20px',
+//         textAlign: 'center'
+//     }
+// };
