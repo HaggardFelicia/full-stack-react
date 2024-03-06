@@ -6,13 +6,15 @@ const morgan = require('morgan');
 
 
 app.use(cors());
-app.use(express.json());
 app.use(morgan('dev'));
+app.use(express.json());
+app.use('/api/v1', routeHandler);
+
 
 app.get('/', (req, res) => {
     res.status(200).json({ message: 'API is running', success: true});
 });
 
-app.use('/api/v1', routeHandler);
+
 
 module.exports = app;
